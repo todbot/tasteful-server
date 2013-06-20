@@ -17,7 +17,16 @@ find_package(Qt5Core REQUIRED)
 
 include_directories("include/")
 
-add_definitions(-std=c++0x -Wreturn-type -Werror=return-type)
+#if( UNIX ) 
+#  add_definitions(-std=c++0x -Wreturn-type -Werror=return-type)
+#endif( UNIX )
+#if( APPLE ) 
+#  add_definitions(-mmacosx-version-min=10.7 -std=c++0x -stdlib=libc++ -Wreturn-type -Werror=return-type)
+  add_definitions(-mmacosx-version-min=10.7 -std=c++0x -stdlib=libc++ -Wreturn-type -Werror=return-type -g3 -Wall -O0)
+#endif( APPLE )
+#if( WIN32 )
+  # tbd
+#endif( WIN32 )
 
 set(Server_sources
 	src/core/ThreadPool.cpp

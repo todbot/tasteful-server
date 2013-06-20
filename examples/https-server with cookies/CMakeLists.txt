@@ -4,7 +4,8 @@ find_package(Qt5Core REQUIRED)
 
 include_directories("../../include/")
 
-add_definitions(-std=c++0x -Wreturn-type -Werror=return-type)
+#add_definitions(-std=c++0x -Wreturn-type -Werror=return-type)
+add_definitions(-mmacosx-version-min=10.7 -std=c++11 -stdlib=libc++ -Wreturn-type -Werror=return-type)
 
 add_executable(HttpsServer "main.cpp")
 
