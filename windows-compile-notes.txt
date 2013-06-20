@@ -1,0 +1,20 @@
+
+Building tasteful-server on Windows with MingW & MSYS & QT5
+===========================================================
+
+1. Install cmake binary from http://www.cmake.org/cmake/resources/software.html
+   and unzip it in mingw /usr/local  
+   (so "which cmake" gives "/usr/local/bin/cmake.exe")
+   $ wget http://www.cmake.org/files/v2.8/cmake-2.8.11.1-win32-x86.zip
+   $ unzip cmake-2.8.11.1-win32-x86.zip
+   $ mdkir /usr/local
+   $ cp -a cmake-2.8.11.1-win32-x86/* /usr/local
+
+2. Make sure "qmake" is in your path for cmake
+   $ export PATH=/c/Qt/Qt5.0.2/5.0.2/mingw47_32/bin:${PATH}
+
+3. Build with the steps
+   $ mkdir build && cd build
+   $ cmake -G "MSYS Makefiles" ..
+   and it still fails
+3.
