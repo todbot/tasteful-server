@@ -1,6 +1,8 @@
 
 QT += network xml
 
+CONFIG += c++11
+
 DEPENDPATH += "$$PWD/src"
 INCLUDEPATH += "$$PWD/include"
 INCLUDEPATH += "$$PWD/include/internal"
